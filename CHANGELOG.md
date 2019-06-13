@@ -1,3 +1,8 @@
+## v5.0.0, 13 June 2019
+
+- Remove support for Ruby 2.2 in keeping with our compatibility [policy](docs/COMPATIBILITY.md)
+- Bump bundler version to ~> 2.0 now Ruby 2.2 is no longer a support requirement
+
 ## v4.1.0, 10 April 2019
 
 - Add better support for mysql (and others) in `transition_conflict_error?` [@greysteil](https://github.com/greysteil) (https://github.com/gocardless/statesman/pull/342)
