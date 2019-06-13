@@ -12,7 +12,6 @@ references:
     - type: cache-restore
       key: statesman-{{ checksum "Gemfile" }}-{{ checksum "~/RAILS_VERSION.txt" }}
 
-    - run: gem update --system
     - run: gem install bundler -v 2.0.1
     - run: bundle install --path vendor/bundle
 
@@ -35,6 +34,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -43,6 +43,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -58,6 +59,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
@@ -71,6 +73,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -79,6 +82,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -94,6 +98,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
@@ -107,6 +112,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.2
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=6.0.0.beta3
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -115,6 +121,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.2
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=6.0.0.beta3
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -130,6 +137,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.2
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=6.0.0.beta3
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
@@ -143,6 +151,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.2.3
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -151,6 +160,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.2.3
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -166,6 +176,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.2.3
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
@@ -179,6 +190,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -187,6 +199,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -202,6 +215,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.0.5
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
@@ -215,6 +229,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_DEPENDENCY_PORT=27017
       - image: circleci/mongo:3
@@ -223,6 +238,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_URL=mysql2://root@127.0.0.1/statesman_test
           - EXCLUDE_MONGOID=true
@@ -238,6 +254,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.3.3
         environment:
+          - BUNDLER_VERSION=2.0.1
           - RAILS_VERSION=5.1.3
           - DATABASE_URL=postgres://postgres@localhost/statesman_test
           - EXCLUDE_MONGOID=true
